@@ -1,0 +1,41 @@
+﻿@using BookShelfProject.Models;
+@model List<Book>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+ 
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>CategoryName</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+
+        @foreach (var x in Model)
+         {
+            <tr>
+                <td>@x.BookID</td>
+                <td>@x.Name</td>
+                <td>@x.Author</td>
+                <td>@x.Category1.CategoryName</td>
+                <td> <a href="/Home/BookDelete/@x.BookID" class="btn btn-danger">Delete</a></td>
+                <td> <a href="/Home/BookUpdate/@x.BookID" class="btn btn-warning">Update</a></td>
+            </tr>                
+         }
+        </thead>
+    </table>
+
+<a href="/Home/AddBook" class="btn btn-primary">Add New Book</a>

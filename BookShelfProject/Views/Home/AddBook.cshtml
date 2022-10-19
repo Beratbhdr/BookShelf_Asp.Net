@@ -1,0 +1,30 @@
+﻿@model BookShelfProject.Models.Book
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddBook</h2>
+<br />
+<form class="form-group" method="post">
+
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.Author)
+        @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.Page)
+        @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        @Html.LabelFor(x => x.Category)
+        @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+
